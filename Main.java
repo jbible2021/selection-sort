@@ -3,6 +3,7 @@
  * Course: CSE 1002, Section 02, Spring 2021
  * Project: Selection Sort
  */
+import java.lang.reflect.InvocationTargetException;
 public class Main {
    // public static void sort (final List<Integer> data) {
    //    for (int i = 0; i < data.size(); i++) {
@@ -28,16 +29,14 @@ public class Main {
       final int size = Integer.parseInt (args[0]);
       
       // uses reflection on list type given as cmdline arg
-      final Class<?> clazz = Class.forName(args[1]);
-      @SuppressWarnings("unchecked")
-      final java.util.List<Integer> list = (java.util.List<Integer>) clazz.getDeclaredConstructor().newInstance();
+      final Class<?> clazz = Class.forName (args[1]);
+      @SuppressWarnings ("unchecked")
+      final java.util.List<Integer> list = (java.util.List<Integer>) clazz.getDeclaredConstructor ().newInstance ();
 
       // initialize list
-      for (int i = 0; i < size; i++) {
-         for (Integer j = 1; j <= size; j++) {
-            list.add (j);
-         }
+      for (int i = 1; i <= size; i++) {
+            list.add (i);
       }
-   System.out.print (list. toString());
+   System.out.print (list. toString ());
    }
 }
